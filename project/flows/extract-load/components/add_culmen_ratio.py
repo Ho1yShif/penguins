@@ -7,8 +7,7 @@ from ascend.application.context import ComponentExecutionContext
 
 @transform(inputs=[ref("read_penguins")])
 def add_culmen_ratio(read_penguins, context: ComponentExecutionContext) -> DataFrame:
-    # Convert ibis.Table to PySpark DataFrame
-    spark = context.spark_session
+    # Convert ibis.Table to PySpark DataFrame using context helper
     spark_df = context.as_spark_dataframe(read_penguins)
 
     # Add the Culmen_Ratio column
