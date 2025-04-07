@@ -4,3 +4,4 @@ component:
     local_file:
       parser: auto
       path: penguins.csv
+      normalize: true
