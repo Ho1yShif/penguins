@@ -1,17 +1,19 @@
+from pyspark.sql import DataFrame, SparkSession
 import pyspark.sql.functions as F
-from pyspark.sql import DataFrame
 
-from ascend.resources import ref, transform
-from ascend.application.context import ComponentExecutionContext
+from ascend.resources import pyspark, ref, test
 
 
-@transform(inputs=[ref("read_penguins")])
-def add_culmen_ratio(read_penguins, context: ComponentExecutionContext) -> DataFrame:
-    # Convert ibis.Table to PySpark DataFrame using context helper
-    spark_df = context.as_spark_dataframe(read_penguins)
-
-    # Add the Culmen_Ratio column
-    penguins_with_ratio = spark_df.withColumn(
+@pyspark(
+  inputs=[ref("read_penguins")],
+  tests=[
+    test("not_null", column="Species"),
+    test("row_count_greater_than", count=100),
+  ],
+)
+def add_culmen_ratio(spark: SparkSession, read_penguins: DataFrame, context) -> DataFrame:
+    # Add the Culmen_Ratio column safely
+    penguins_with_ratio = read_penguins.withColumn(
         "Culmen_Ratio",
         F.when(
             (F.col("Culmen_Depth_mm").isNotNull()) &
