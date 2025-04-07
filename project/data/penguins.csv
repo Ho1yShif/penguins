@@ -1,4 +1,4 @@
-studyName,Sample Number,Species,Region,Island,Stage,Individual ID,Clutch Completion,Date Egg,Culmen Length (mm),Culmen Depth (mm),Flipper Length (mm),Body Mass (g),Sex,Delta 15 N (o/oo),Delta 13 C (o/oo),Comments
+studyName,Sample Number,Species,Region,Island,Stage,Individual_ID,Clutch Completion,Date Egg,Culmen_Length_mm,Culmen_Depth_mm,Flipper Length_mm,Body Mass_g,Sex,Delta_15_N_(o/oo),Delta_13_C_(o/oo),Comments
 PAL0708,1,Adelie Penguin (Pygoscelis adeliae),Anvers,Torgersen,"Adult, 1 Egg Stage",N1A1,Yes,11/11/07,39.1,18.7,181,3750,MALE,,,Not enough blood for isotopes.
 PAL0708,2,Adelie Penguin (Pygoscelis adeliae),Anvers,Torgersen,"Adult, 1 Egg Stage",N1A2,Yes,11/11/07,39.5,17.4,186,3800,FEMALE,8.94956,-24.69454,
 PAL0708,3,Adelie Penguin (Pygoscelis adeliae),Anvers,Torgersen,"Adult, 1 Egg Stage",N2A1,Yes,11/16/07,40.3,18,195,3250,FEMALE,8.36821,-25.33302,
