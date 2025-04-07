@@ -1,0 +1,15 @@
+profile:
+  parameters:
+    gcp:
+      project_id: shifra-test-452800
+    bigquery:
+      dataset: PENGUINS_PROD
+      location: US
+
+  defaults:
+    - kind: Flow
+      name:
+        regex: .*
+      spec:
+        data_plane:
+          connection_name: data_plane_bigquery
