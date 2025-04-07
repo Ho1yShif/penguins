@@ -5,7 +5,7 @@ from ascend.resources import ref, transform
 from ascend.application.context import ComponentExecutionContext
 
 
-@pyspark(inputs=[ref("read_penguins")])
+@transform(inputs=[ref("read_penguins")])
 def add_culmen_ratio(read_penguins: DataFrame, context: ComponentExecutionContext) -> DataFrame:
     # Add a new column 'Culmen_Ratio' safely handling null and zero division
     penguins_with_ratio = read_penguins.withColumn(
