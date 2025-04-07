@@ -13,8 +13,7 @@ def add_culmen_ratio(read_penguins: DataFrame, context: ComponentExecutionContex
         F.when(
             (F.col("Culmen_Depth_mm").isNotNull()) &
             (F.col("Culmen_Length_mm").isNotNull()) &
-            (F.col("Culmen_Depth_mm") != 0), &
-            (F.col("Culmen_Length_mm") != 0),
+            (F.col("Culmen_Depth_mm") != 0),
             F.col("Culmen_Length_mm") / F.col("Culmen_Depth_mm")
         ).otherwise(None)
     )
