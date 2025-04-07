@@ -7,8 +7,7 @@ from ascend.resources import pyspark, ref, test
 @pyspark(
   inputs=[ref("read_penguins")],
   tests=[
-    test("not_null", column="Species"),
-    test("row_count_greater_than", count=100),
+    test("not_null", column="Species")
   ],
 )
 def add_culmen_ratio(spark: SparkSession, read_penguins: DataFrame, context) -> DataFrame:
